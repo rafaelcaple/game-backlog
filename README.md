@@ -2,9 +2,16 @@
 
 A web application to manage your personal game backlog.
 
-## Live Demo
+# Live Demo
 
-[game-backlog-topaz.vercel.app](https://game-backlog-topaz.vercel.app)
+Live demo: [game-backlog-topaz.vercel.app](https://game-backlog-topaz.vercel.app)
+
+![Backlog App Demo](demo.png)
+
+
+## Backend Repository
+
+[game-backlog-backend](https://github.com/rafaelcaple/game-backlog-backend)
 
 ## Tech Stack
 
@@ -32,6 +39,3 @@ Create a `.env` file in the root of the project:
 VITE_API_URL=your_backend_url
 ```
 
-## Backend Repository
-
-[game-backlog-backend](https://github.com/rafaelcaple/game-backlog-backend)
