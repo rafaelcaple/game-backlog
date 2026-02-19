@@ -11,7 +11,7 @@ Live demo: [game-backlog-topaz.vercel.app](https://game-backlog-topaz.vercel.app
 
 ## Backend Repository
 
-[game-backlog-backend](https://github.com/rafaelcaple/game-backlog-backend)
+[game-backlog-backend](https://github.com/rafaelcaple/game-backlog-backend) — Spring API integrated with this frontend.
 
 ## Tech Stack
 
