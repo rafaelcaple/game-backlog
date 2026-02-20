@@ -34,6 +34,7 @@ Built to practice REST API development with Spring Boot and full-stack integrati
 - Add login system so each user can have their own backlog
 - Switch to a more complete game database (IGDB)
 - Game rating system
+- Mobile responsive layout
 
 ## How to run
 
