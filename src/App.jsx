@@ -101,7 +101,7 @@ function App() {
 
   const statusColor = {
     PLAYING: "#646cff",
-    PLAYED: "#22c55e",
+    COMPLETED: "#22c55e",
     BACKLOG: "#f59e0b",
     DROPPED: "#ef4444",
   };
@@ -164,7 +164,7 @@ function App() {
       <div className="content">
         <div className="stats">
           <span>Total: {games.length} Games</span>
-          {["PLAYING", "PLAYED", "BACKLOG", "DROPPED"].map((s) => {
+          {["PLAYING", "COMPLETED", "BACKLOG", "DROPPED"].map((s) => {
             const count = games.filter((g) => g.status === s).length;
             return count > 0 ? (
               <span key={s} style={{ color: statusColor[s] }}>
@@ -175,7 +175,7 @@ function App() {
         </div>
 
         <div className="tabs">
-          {["ALL", "PLAYING", "PLAYED", "BACKLOG", "DROPPED"].map((tab) => (
+          {["ALL", "PLAYING", "COMPLETED", "BACKLOG", "DROPPED"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -219,7 +219,7 @@ function App() {
                     className="card-select"
                   >
                     <option value="PLAYING">Playing</option>
-                    <option value="PLAYED">Played</option>
+                    <option value="COMPLETED">Completed</option>
                     <option value="BACKLOG">Backlog</option>
                     <option value="DROPPED">Dropped</option>
                   </select>
