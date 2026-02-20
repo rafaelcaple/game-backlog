@@ -8,7 +8,7 @@ Built to practice REST API development with Spring Boot and full-stack integrati
 
 [[→ game-backlog-topaz.vercel.app]](https://game-backlog-topaz.vercel.app)
 
-![Backlog App Demo](demo.png)
+![Backlog App Demo](demo2.png)
 
 ## Features
 
