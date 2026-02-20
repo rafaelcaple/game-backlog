@@ -15,6 +15,7 @@ Built to practice REST API development with Spring Boot and full-stack integrati
 - Search games by name
 - Save games to your backlog
 - Track status: Backlog, Playing, Completed or Dropped
+- Real-time counter by status
 - Remove games from the list
 
 ## Tech Stack
