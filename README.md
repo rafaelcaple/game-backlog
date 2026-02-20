@@ -1,41 +1,65 @@
-# Game Backlog
+# Game Backlog - Frontend
 
-A web application to manage your personal game backlog.
+Interface for managing your personal game backlog, integrated with the [Game Backlog API](https://github.com/rafaelcaple/game-backlog-backend).
 
-# Live Demo
+Built to practice REST API development with Spring Boot and full-stack integration between a Java backend and a React frontend.
 
-Live demo: [game-backlog-topaz.vercel.app](https://game-backlog-topaz.vercel.app)
+## Live Demo
+
+[[→ game-backlog-topaz.vercel.app]](https://game-backlog-topaz.vercel.app)
 
 ![Backlog App Demo](demo.png)
 
+## Features
 
-## Backend Repository
-
-[game-backlog-backend](https://github.com/rafaelcaple/game-backlog-backend) — Spring API integrated with this frontend.
+- Search games by name
+- Save games to your backlog
+- Track status: Backlog, Playing, Completed or Dropped
+- Remove games from the list
 
 ## Tech Stack
 
 - React
-- Vite
+- JavaScript
 - CSS
+- Vite
 
-## Features
+## Backend Repository
 
-- Search games using the RAWG API
-- Save games to your list
-- Organize by status: Backlog, Playing, Played, Dropped
-- Delete games from your list
+[game-backlog-backend](https://github.com/rafaelcaple/game-backlog-backend) — Spring Boot REST API integrated with this frontend.
+
+## Future Implementations
+
+- Add login system so each user can have their own backlog
+- Switch to a more complete game database (IGDB)
+- Game rating system
 
 ## How to run
+
+### Prerequisites
+- Node.js 18+
+- Backend running locally or in production
+
+### Setup
+
+1. Clone the repository
+```bash
+git clone https://github.com/rafaelcaple/game-backlog.git
+```
+
+2. Install dependencies
 ```bash
 npm install
+```
+
+3. Configure the backend URL in the environment file
+```bash
+VITE_API_URL=http://localhost:8080
+```
+
+4. Run the application
+```bash
 npm run dev
 ```
 
-## Environment Variables
-
-Create a `.env` file in the root of the project:
-```
-VITE_API_URL=your_backend_url
-```
-
+The application will be available at `http://localhost:5173`
