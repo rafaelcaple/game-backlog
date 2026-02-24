@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { Trash2, Search } from "lucide-react";
+import { Trash2, Search, BookmarkPlus, BookDown } from "lucide-react";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
 
@@ -151,7 +151,9 @@ function App() {
                   <div className="dropdown-item-info">
                     <span className="dropdown-item-name">{game.name}</span>
                   </div>
-                  <button onClick={() => save(game.id)}>+</button>
+                  <button onClick={() => save(game.id)}>
+                    <BookDown size={16} />
+                  </button>
                 </div>
               ))}
             </div>

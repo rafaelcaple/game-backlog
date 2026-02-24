@@ -91,9 +91,9 @@ nav input:focus {
 }
 
 .dropdown-item button {
-    background-color: transparent;
-    color: #646cff;
-    border: 2px solid #646cff;
+    background-color: #4f46e5;
+    border: none;
+    color: white;
     border-radius: 50%;
     width: 32px;
     height: 32px;
@@ -106,7 +106,7 @@ nav input:focus {
 }
 
 .dropdown-item button:hover {
-    background-color: #646cff;
+    background-color: #3730a3;
     color: #fff;
 }
 
@@ -121,6 +121,8 @@ nav input:focus {
 .dropdown {
     max-height: 320px;
     overflow-y: auto;
+    background-color: #141414;
+    border-radius: 10px;
 }
 
 .dropdown-item {
