@@ -46,7 +46,7 @@ Built to practice REST API development with Spring Boot and full-stack integrati
 
 1. Clone the repository
 ```bash
-git clone https://github.com/rafaelcaple/game-backlog.git
+git clone https://github.com/rafaelcaple/game-backlog
 ```
 
 2. Install dependencies
