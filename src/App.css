@@ -142,7 +142,7 @@ nav input:focus {
 .stats {
     display: flex;
     gap: 12px;
-    color: #555;
+    color: #aaa;
     font-size: 0.85rem;
     margin-bottom: 20px;
 }
@@ -155,7 +155,7 @@ nav input:focus {
 
 .tabs button {
     background-color: transparent;
-    color: #555;
+    color: #aaa;
     border: 1px solid #1a1a1a;
     padding: 8px 20px;
     cursor: pointer;
