@@ -1,7 +1,14 @@
 import AuthPage from "./AuthPage";
 import { useState, useEffect } from "react";
 import "./App.css";
-import { Trash2, Search, BookDown, User, LogOut } from "lucide-react";
+import {
+  Trash2,
+  Search,
+  BookDown,
+  User,
+  LogOut,
+  CirclePlus,
+} from "lucide-react";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
 
@@ -188,7 +195,7 @@ function App() {
                         <span className="dropdown-item-name">{game.name}</span>
                       </div>
                       <button onClick={() => save(game.id)}>
-                        <BookDown size={16} />
+                        <CirclePlus size={16} />
                       </button>
                     </div>
                   ))}
@@ -262,25 +269,33 @@ function App() {
                           <Trash2 size={16} />
                         </button>
                       </div>
-                      <span
-                        className="card-status-badge"
-                        style={{ backgroundColor: statusColor[game.status] }}
-                      >
-                        {game.status}
-                      </span>
+                      <div className="badge-wrapper">
+                        <span
+                          className="card-status-badge"
+                          style={{ backgroundColor: statusColor[game.status] }}
+                        >
+                          {game.status}
+                        </span>
+                        <div className="badge-menu">
+                          {["PLAYING", "COMPLETED", "BACKLOG", "DROPPED"].map(
+                            (s) => (
+                              <button
+                                key={s}
+                                onClick={() => updateStatus(game.id, s)}
+                              >
+                                <span
+                                  className="badge-dot"
+                                  style={{ backgroundColor: statusColor[s] }}
+                                ></span>
+                                {s.charAt(0) + s.slice(1).toLowerCase()}
+                              </button>
+                            ),
+                          )}
+                        </div>
+                      </div>
                     </div>
                     <div className="card-info">
                       <span className="card-title">{game.title}</span>
-                      <select
-                        value={game.status}
-                        onChange={(e) => updateStatus(game.id, e.target.value)}
-                        className="card-select"
-                      >
-                        <option value="PLAYING">Playing</option>
-                        <option value="COMPLETED">Completed</option>
-                        <option value="BACKLOG">Backlog</option>
-                        <option value="DROPPED">Dropped</option>
-                      </select>
                     </div>
                   </div>
                 ))}
@@ -291,16 +306,16 @@ function App() {
           {confirmDeleteId && (
             <div className="modal-overlay">
               <div className="modal">
-                <p>Are you sure you want to delete this game?</p>
+                <p className="modal-title">Delete game?</p>
                 <div className="modal-buttons">
-                  <button onClick={confirmDelete} className="modal-confirm">
-                    Delete
-                  </button>
                   <button
                     onClick={() => setConfirmDeleteId(null)}
                     className="modal-cancel"
                   >
                     Cancel
+                  </button>
+                  <button onClick={confirmDelete} className="modal-confirm">
+                    Delete
                   </button>
                 </div>
               </div>
