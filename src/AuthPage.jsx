@@ -52,16 +52,18 @@ function AuthPage({ onLogin }) {
           </div>
 
           <div className="auth-headline">
-            <h2>
-              Keep track of your <span>Gaming Library</span>
-            </h2>
+            <h2>Track your gaming library</h2>
+            <p>
+              Organize every title you've played, dropped, or still need to
+              finish.
+            </p>
           </div>
         </div>
 
         {/* RIGHT PANEL */}
         <div className="auth-right">
-          <h1>Welcome</h1>
-
+          <h1>Welcome back</h1>
+          <p className="auth-subtitle">Sign in to your account</p>
           <div className="auth-tabs">
             <button
               className={`auth-tab ${isLogin ? "active" : ""}`}
@@ -70,7 +72,7 @@ function AuthPage({ onLogin }) {
                 setError("");
               }}
             >
-              Login
+              Log in
             </button>
             <button
               className={`auth-tab ${!isLogin ? "active" : ""}`}
@@ -79,7 +81,7 @@ function AuthPage({ onLogin }) {
                 setError("");
               }}
             >
-              Sign Up
+              Sign up
             </button>
           </div>
 
@@ -99,7 +101,10 @@ function AuthPage({ onLogin }) {
           </div>
 
           <div className="auth-field">
-            <label>Password</label>
+            <label>
+              Password
+              <a href="#">Forgot password?</a>
+            </label>
             <div className="auth-input-wrapper">
               <Lock size={16} className="auth-input-icon" />
               <input
@@ -123,10 +128,7 @@ function AuthPage({ onLogin }) {
             {loading ? (
               "Loading..."
             ) : (
-              <>
-                {isLogin ? "Sign In" : "Create Account"}
-                <LogIn size={16} />
-              </>
+              <>{isLogin ? "Log in" : "Create an account"}</>
             )}
           </button>
         </div>
