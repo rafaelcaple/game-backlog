@@ -26,7 +26,13 @@ function AuthPage({ onLogin }) {
         body: JSON.stringify({ username, password }),
       });
       if (!response.ok) {
-        setError("Invalid credentials. Please try again.");
+        if (response.status === 400) {
+          const data = await response.json();
+          const messages = data.errors?.map((e) => e.defaultMessage).join(", ");
+          setError(messages || "Invalid input.");
+        } else {
+          setError("Invalid credentials. Please try again.");
+        }
         return;
       }
       const token = await response.text();
