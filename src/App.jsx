@@ -37,9 +37,12 @@ function App() {
 
   const search = async () => {
     try {
-      const response = await fetch(`${API_URL}/games/search?query=${query}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      });
+      const response = await fetch(
+        `${API_URL}/games/search?query=${encodeURIComponent(query)}`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        },
+      );
       const data = await response.json();
       setResults(data.results || []);
       setSearchError(false);
