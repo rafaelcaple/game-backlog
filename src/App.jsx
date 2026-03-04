@@ -124,7 +124,6 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Games response:", data); // <-- veja aqui
         setGames(data);
         setListLoading(false);
       });
