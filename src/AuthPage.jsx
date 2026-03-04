@@ -26,12 +26,15 @@ function AuthPage({ onLogin }) {
         body: JSON.stringify({ username, password }),
       });
       if (!response.ok) {
+        const data = await response.json();
+
         if (response.status === 400) {
-          const data = await response.json();
-          const messages = data.errors?.map((e) => e.defaultMessage).join(", ");
-          setError(messages || "Invalid input.");
+          const messages =
+            data.fieldErrors?.map((e) => e.defaultMessage).join(", ") ||
+            "Invalid input.";
+          setError(messages);
         } else {
-          setError("Invalid credentials. Please try again.");
+          setError(data.message || "Connection error. Check your server.");
         }
         return;
       }
