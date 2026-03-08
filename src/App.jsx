@@ -87,13 +87,16 @@ function App() {
 
   const confirmDelete = async () => {
     await fetch(`${API_URL}/games/${confirmDeleteId}`, {
+    const response = await fetch(`${API_URL}/games/${confirmDeleteId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
+
     setGames(games.filter((g) => g.id !== confirmDeleteId));
     setConfirmDeleteId(null);
+    setSavedMessage("Game deleted");
   };
 
   useEffect(() => {
