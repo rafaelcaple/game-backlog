@@ -11,6 +11,16 @@ import {
 
 import { API_URL } from "./config";
 
+function getUsernameFromToken(token) {
+  if (!token) return null;
+  try {
+    const base64 = token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+    return JSON.parse(atob(base64)).sub;
+  } catch {
+    return null;
+  }
+}
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -23,6 +33,7 @@ function App() {
   const [savedMessage, setSavedMessage] = useState("");
   const [confirmDeleteId, setConfirmDeleteId] = useState(null);
   const [listLoading, setListLoading] = useState(true);
+  const username = getUsernameFromToken(token);
 
   const handleLogin = (token) => {
     localStorage.setItem("token", token);
@@ -233,7 +244,7 @@ function App() {
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
               >
                 <User size={16} />
-                <span>Account</span>
+                <span>{username || "Account"}</span>
               </button>
               {userMenuOpen && (
                 <div className="user-dropdown">
