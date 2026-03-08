@@ -179,7 +179,7 @@ function App() {
                   setQuery(e.target.value);
                   if (e.target.value === "") setResults([]);
                 }}
-                placeholder="Search your games..."
+                placeholder="Search games"
               />
               {searchError && (
                 <div className="dropdown">
