@@ -86,7 +86,6 @@ function App() {
   };
 
   const confirmDelete = async () => {
-    await fetch(`${API_URL}/games/${confirmDeleteId}`, {
     const response = await fetch(`${API_URL}/games/${confirmDeleteId}`, {
       method: "DELETE",
       headers: {
