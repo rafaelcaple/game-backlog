@@ -122,10 +122,10 @@ function App() {
       setResults([]);
       return;
     }
+    setLoading(true);
     const timeout = setTimeout(async () => {
-      setLoading(true);
-      await search();
-      setLoading(false);
+      await search(); 
+      setLoading(false);    
     }, 800);
     return () => clearTimeout(timeout);
   }, [query]);
