@@ -9,7 +9,7 @@ import {
   CirclePlus,
 } from "lucide-react";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+import { API_URL } from "./config";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));

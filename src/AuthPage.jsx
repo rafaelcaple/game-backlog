@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./AuthPage.css";
 import { User, Lock, LogIn } from "lucide-react";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+import { API_URL } from "./config";
 
 function AuthPage({ onLogin }) {
   const [username, setUsername] = useState("");
