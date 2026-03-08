@@ -93,9 +93,16 @@ function App() {
       },
     });
 
+    if (!response.ok) {
+      setSavedMessage("Failed to delete game.");
+      setTimeout(() => setSavedMessage(""), 2000);
+      setConfirmDeleteId(null);
+      return;
+    }
     setGames(games.filter((g) => g.id !== confirmDeleteId));
     setConfirmDeleteId(null);
     setSavedMessage("Game deleted");
+    setTimeout(() => setSavedMessage(""), 2000);
   };
 
   useEffect(() => {
