@@ -81,7 +81,7 @@ function App() {
     setTimeout(() => setSavedMessage(""), 2000);
   };
 
-  const deleteGame = async (id) => {
+  const deleteGame =  (id) => {
     setConfirmDeleteId(id);
   };
 
