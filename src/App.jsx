@@ -67,6 +67,7 @@ function App() {
     const data = await gamesResponse.json();
     setGames(data);
     setResults([]);
+    setQuery("");
     setSavedMessage("Game saved!");
     setTimeout(() => setSavedMessage(""), 2000);
   };
