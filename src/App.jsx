@@ -54,7 +54,7 @@ function App() {
         },
       );
       const data = await response.json();
-      setResults(data.results || []);
+      setResults(Array.isArray(data) ? data : []);
       setSearchError(false);
     } catch (error) {
       setResults([]);
@@ -62,8 +62,8 @@ function App() {
     }
   };
 
-  const save = async (rawgId) => {
-    const response = await fetch(`${API_URL}/games/save/${rawgId}`, {
+  const save = async (gameId) => {
+    const response = await fetch(`${API_URL}/games/save/${gameId}`, {
       method: "POST",
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
@@ -225,7 +225,7 @@ function App() {
                   <div className="dropdown-header">SEARCH RESULTS</div>
                   {results.map((game) => (
                     <div key={game.id} className="dropdown-item">
-                      <img src={game.background_image} alt={game.name} />
+                      <img src={game.coverUrl} alt={game.name} />
                       <div className="dropdown-item-info">
                         <span className="dropdown-item-name">{game.name}</span>
                       </div>
