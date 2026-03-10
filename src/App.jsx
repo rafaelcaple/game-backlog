@@ -15,7 +15,8 @@ function getUsernameFromToken(token) {
   if (!token) return null;
   try {
     const base64 = token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
-    return JSON.parse(atob(base64)).sub;
+    const payload = JSON.parse(atob(base64));
+    return payload.DisplayName || payload.sub;
   } catch {
     return null;
   }
