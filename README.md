@@ -2,7 +2,6 @@
 
 Interface for managing your personal game backlog, integrated with the [Game Backlog API](https://github.com/rafaelcaple/game-backlog-backend).
 
-### [Live Demo](https://game-backlog-topaz.vercel.app/) 
 ### [Backend Repository](https://github.com/rafaelcaple/game-backlog-backend)
 
 ## Tech Stack
